@@ -6,6 +6,51 @@
   <title>Jane Doe — Creative Project Manager</title>
   <style>
     /* ── TOKENS ─────────────────────────────────────────────────── */
+  @font-face {
+  font-family: 'Feature Deck';
+  src: url('assets/fonts/FeatureDeck-Regular.woff2') format('woff2'),
+       url('assets/fonts/FeatureDeck-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Feature Deck';
+  src: url('assets/fonts/FeatureDeck-RegularItalic.woff2') format('woff2'),
+       url('assets/fonts/FeatureDeck-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('assets/fonts/Sohne-Buch.woff2') format('woff2'),
+       url('assets/fonts/Sohne-Buch.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('assets/fonts/Sohne-BuchKursiv.woff2') format('woff2'),
+       url('assets/fonts/Sohne-BuchKursiv.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Söhne';
+  src: url('assets/fonts/Sohne-Kraftig.woff2') format('woff2'),
+       url('assets/fonts/Sohne-Kraftig.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+    
     :root {
       --white:        #000000;
       --black:        #F0EDEA;
@@ -16,8 +61,8 @@
       --accent-2:     #A078D4;
       --accent-dim:   rgba(184, 158, 252, 0.12);
 
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-display: 'Feature Deck', Georgia, serif;
+      --font-body:    'Söhne', system-ui, sans-serif;
 
       --text-xs:   0.6875rem;
       --text-sm:   0.8125rem;
@@ -59,9 +104,6 @@
       --border:      1px solid var(--grey-light);
       --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
     }
-
-    /* ── GOOGLE FONTS (preview stand-ins) ───────────────────────── */
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500&display=swap');
 
     /* ── RESET ───────────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -603,8 +645,8 @@
     <!-- ── HERO ────────────────────────────────────────────────── -->
     <section id="hero" aria-labelledby="hero-heading">
       <div>
-        <p>Creative Project Manager</p>
-        <h1 id="hero-heading">Brands Built With Intention &amp; Precision</h1>
+        <p>Creative Operations Manager</p>
+        <h1 id="hero-heading">I'm Roshni Parmar, I help creative teams find their focus and rhythm. </h1>
         <p>I turn ambitious ideas into campaigns, launches, and systems that move people — from brief to final delivery, without losing the thread.</p>
         <nav aria-label="Hero actions">
           <a href="#contact">Let's Talk</a>
@@ -778,13 +820,10 @@
         </div>
         <ul aria-label="Social links" role="list">
           <li><a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Read.cv</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Twitter</a></li>
         </ul>
       </div>
       <div class="contact-video">
-        <!-- Replace src with your video thumbnail or swap this img for a <video> tag -->
-        <img src="https://placehold.co/608x1080/1a1a1a/333?text=Video+Placeholder" alt="Video placeholder — replace with your video" />
+        <video src="images:/blooming-lily-red.mp4" autoplay muted loop playsinline></video>
       </div>
     </section>
 
@@ -792,8 +831,8 @@
 
   <!-- ── FOOTER ─────────────────────────────────────────────────── -->
   <footer>
-    <small>© 2025 Jane Doe — All rights reserved</small>
-    <small>Built with vanilla code</small>
+    <small>© 2025 ROSHPAR CONSULTING</small>
+
   </footer>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
