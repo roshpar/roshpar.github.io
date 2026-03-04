@@ -373,7 +373,12 @@
     }
 
     @media (max-width: 480px) {
-      .hero-name { word-break: break-word; }
+      .hero-name {
+        font-size: clamp(3.5rem, 16vw, 5rem);
+        line-height: 1;
+        word-break: normal;
+        overflow-wrap: break-word;
+      }
     }
 
     /* ─── Selected Work ─────────────────────────────────────────── */
@@ -860,11 +865,7 @@
       }
 
       .philosophy-video {
-        justify-content: center;
-      }
-
-      .philosophy-video-wrap {
-        max-width: 260px;
+        display: none;
       }
     }
 
@@ -1382,10 +1383,7 @@
         </div>
 
         <div class="contact-links">
-          <a href="mailto:roshni&#64;roshpar&#46;com" class="contact-link">
-            roshni&#64;roshpar&#46;com
-            <span class="contact-link-arrow">→</span>
-          </a>
+          <a href="mailto:roshni&#64;roshpar&#46;com" class="contact-link">roshni&#64;roshpar&#46;com<span class="contact-link-arrow">→</span></a>
           <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link">
             LinkedIn
             <span class="contact-link-arrow">→</span>
