@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Roshni Parmar — Creative Operations Lead and Senior Project Manager. Building systems that let creative teams find focus and do their best work." />
-  <meta property="og:title" content="Roshni Parmar — Creative Operations Lead" />
+  <meta name="description" content="Roshni Parmar — Creative Operations Lead and Senior Project Manager. Vancouver, British Columbia, Canada." />
+  <meta property="og:title" content="Roshni Parmar — Senior Project Manager, Creative Operations Lead" />
   <meta property="og:description" content="Building systems that let creative teams find focus and do their best work." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#F5F2EE" />
-  <title>Roshni Parmar — Creative Operations Lead</title>
+  <title>Roshni Parmar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -140,7 +140,6 @@
       font-family: var(--serif);
       font-weight: 500;
       font-size: 1.25rem;
-      letter-spacing: 0.18em;
       color: var(--charcoal);
       text-decoration: none;
       text-transform: lowercase;
@@ -386,7 +385,7 @@
     }
 
     .section-label {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: 0.865rem;
       font-weight: 400;
       letter-spacing: 0.2em;
@@ -851,28 +850,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-
-    .philosophy-video-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px dashed rgba(196, 184, 168, 0.2);
-    }
-
-    .philosophy-video-placeholder span {
-      font-family: var(--sans);
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(196, 184, 168, 0.35);
-    }
-
-    /* Placeholder hidden when video has a src */
-    .philosophy-video-placeholder.hidden {
-      display: none;
     }
 
     @media (max-width: 768px) {
@@ -1373,14 +1350,14 @@
       <div class="philosophy-text">
         <span class="section-label section-label--light">Philosophy</span>
         <h2 class="philosophy-statement">Seeing people bloom makes me passionate about leading creative teams.</h2>
-        <p class="philosophy-body">I know what it feels like when the brief isn't clear, the timeline isn't realistic, and the handoffs break down at exactly the wrong moment. <br></br>I also know what it feels like when things are running well: when a team has the space to think, the clarity to act, and the confidence that someone is holding the bigger picture.</p>
+        <p class="philosophy-body">I know what it feels like when the brief isn't clear, the timeline isn't realistic, and the handoffs break down at exactly the wrong moment. I also know what it feels like when things are running well: when a team has the space to think, the clarity to act, and the confidence that someone is holding the bigger picture.</p>
       </div>
 
       <div class="philosophy-video">
         <div class="philosophy-video-wrap">
-          <video autoplay muted loop playsinline src="assets/videos/bloomin-lily-red.mp4">
+          <video autoplay muted loop playsinline src="/assets/videos/blooming-lily-red.mp4">
           </video>
-          </div>
+        </div>
       </div>
 
     </div>
@@ -1403,8 +1380,8 @@
         </div>
 
         <div class="contact-links">
-          <a href="/cdn-cgi/l/email-protection#25574a564d4b4c65574a564d5544570b464a48" class="contact-link">
-            <span class="__cf_email__" data-cfemail="0f7d607c6761664f7d607c677f6e7d216c6062">[email&#160;protected]</span>
+          <a href="mailto:roshni@roshpar.com" class="contact-link">
+            roshni@roshpar.com
             <span class="contact-link-arrow">→</span>
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link">
@@ -1423,7 +1400,7 @@
     <span class="footer-copy">© 2025 roshpar · All rights reserved</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
 
     // Hamburger toggle
     const hamburger = document.getElementById('hamburger');
@@ -1451,13 +1428,6 @@
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeMenu();
     });
-    // Hide video placeholder if video has a src
-    const video = document.querySelector('.philosophy-video-wrap video');
-    const placeholder = document.querySelector('.philosophy-video-placeholder');
-    if (video && placeholder && video.getAttribute('src') !== '') {
-      placeholder.classList.add('hidden');
-    }
-
     // Scroll reveal — progressive enhancement with reduced motion support
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
