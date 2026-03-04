@@ -1,1029 +1,1414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Roshni Parmar — Creative Operations Lead and Senior Project Manager.">
-<title>Roshni Parmar — ROSHPAR CONSULTING</title>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Roshni Parmar — Creative Operations Lead and Senior Project Manager. Building systems that let creative teams find focus and do their best work." />
+  <meta property="og:title" content="Roshni Parmar — Creative Operations Lead" />
+  <meta property="og:description" content="Building systems that let creative teams find focus and do their best work." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#F5F2EE" />
+  <title>Roshni Parmar — Senior Project Manager, Creative Operations Lead in Vancouver, British Columbia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
-/* ══════════════════════════════════════════
-   FONTS — Google Fonts (swap for custom in GitHub)
-══════════════════════════════════════════ */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500;600&display=swap');
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ══════════════════════════════════════════
-   TOKENS
-══════════════════════════════════════════ */
-:root {
-  --ivory:     #F5F1EB;
-  --linen:     #EDE8DF;
-  --charcoal:  #2C2A27;
-  --parchment: #C9C0B3;
-  --bronze:    #C9C0B3;
-  --stone:     #C9C0B3;
-  --nearblack: #0A0A0A;
-  --serif:     'Cormorant Garamond', Georgia, serif;
-  --sans:      'DM Sans', system-ui, sans-serif;
-  --nav-h:     70px;
-}
+    :root {
+      --ivory:      #F5F2EE;
+      --off-white:  #FAFAF8;
+      --charcoal:   #1C1C1A;
+      --taupe:      #C4B8A8;
+      --linen:      #A89880;
+      --black:      #0A0A0A;
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'DM Sans', system-ui, sans-serif;
 
-/* ══════════════════════════════════════════
-   RESET & BASE
-══════════════════════════════════════════ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html {
-  font-size: 16px;
-  scroll-behavior: smooth;
-  /* FIX: offset anchor scroll for fixed nav */
-  scroll-padding-top: var(--nav-h);
-}
-body {
-  background: var(--ivory);
-  color: var(--charcoal);
-  font-family: var(--sans);
-  font-weight: 300;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-img, video { display: block; max-width: 100%; }
-a { color: inherit; }
+      /* Section tonal progression — lightest → true black */
+      --step-1: #FAFAF8; /* Hero          — off-white      */
+      --step-2: #F5F2EE; /* Selected Work — ivory          */
+      --step-3: #EAE6E0; /* About         — warm grey      */
+      --step-4: #D9D3CB; /* Testimonials  — mid taupe      */
+      --step-5: #0A0A0A; /* Philosophy    — true black     */
+    }
 
-/* ══════════════════════════════════════════
-   NAV
-══════════════════════════════════════════ */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 500;
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 64px;
-  background: var(--nearblack);
-  border-bottom: 1px solid #222;
-}
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--ivory);
-  text-decoration: none;
-  white-space: nowrap;
-  flex-shrink: 0;
-  line-height: 1;
-}
-.nav-links {
-  display: flex;
-  gap: 44px;
-  list-style: none;
-}
-.nav-links a {
-  font-family: var(--sans);
-  font-size: 0.73rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--ivory);
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 4px;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0;
-  width: 0; height: 1px;
-  background: var(--stone);
-  transition: width 0.3s ease;
-}
-.nav-links a:hover::after { width: 100%; }
+    html { scroll-behavior: smooth; }
 
-/* Hamburger — hidden on desktop */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-  z-index: 600;
-  flex-shrink: 0;
-}
-.hamburger span {
-  display: block;
-  width: 26px;
-  height: 1.5px;
-  background: var(--ivory);
-  transition: transform 0.3s ease, opacity 0.25s ease;
-  transform-origin: center;
-}
-.hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+    body {
+      background-color: var(--off-white);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* Mobile drawer */
-.mobile-menu {
-  position: fixed;
-  top: 0; right: 0;
-  width: 100%; height: 100vh;
-  background: var(--nearblack);
-  z-index: 490;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 80px 48px;
-  gap: 36px;
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.mobile-menu.open { transform: translateX(0); }
-.mobile-menu a {
-  font-family: var(--serif);
-  font-size: 3rem;
-  font-weight: 300;
-  color: var(--ivory);
-  text-decoration: none;
-  letter-spacing: 0.02em;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 4px;
-  transition: border-color 0.3s, color 0.3s;
-}
-.mobile-menu a:hover { border-color: var(--stone); color: var(--stone); }
+    /* ─── Navigation ────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(245, 242, 238, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(196, 184, 168, 0.25);
+    }
 
-/* ══════════════════════════════════════════
-   HERO
-══════════════════════════════════════════ */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 130px 60px 100px;
-  background: var(--nearblack);
-  position: relative;
-}
-.hero-inner {
-  max-width: 860px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 1;
-  justify-content: center;
-}
-.hero-name {
-  font-family: var(--serif);
-  font-size: clamp(3.2rem, 6.8vw, 6.4rem);
-  font-weight: 300;
-  line-height: 1.0;
-  color: var(--ivory);
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 0.95s 0.15s forwards;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.hero-roles {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--stone);
-  opacity: 0;
-  animation: fadeUp 0.85s 0.45s forwards;
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.hero-roles .divider {
-  display: inline-block;
-  width: 1px;
-  height: 11px;
-  background: #444;
-  flex-shrink: 0;
-}
+    .nav-wordmark {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.25rem;
+      letter-spacing: 0.18em;
+      color: var(--charcoal);
+      text-decoration: none;
+      text-transform: lowercase;
+    }
 
-/* Sub-lines — absolutely anchored above chevron */
-.hero-sub-block {
-  position: absolute;
-  bottom: 88px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 120px);
-  max-width: 580px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.hero-sub {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  animation: fadeUp 0.95s 0.72s forwards;
-}
-.hero-sub-tagline {
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: clamp(1.20rem, 1.78vw, 1.42rem);
-  font-weight: 300;
-  color: var(--ivory);
-  line-height: 1.4;
-}
-.hero-sub-body {
-  font-family: var(--sans);
-  font-size: clamp(0.97rem, 1.44vw, 1.15rem);
-  font-weight: 300;
-  color: var(--stone);
-  line-height: 1.75;
-}
+    /* Desktop links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
 
-.chevron {
-  position: absolute;
-  bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  opacity: 0;
-  animation: fadeIn 1s 1.4s forwards, chevronPulse 2.5s 2.4s infinite;
-}
-.chevron svg {
-  width: 24px; height: 14px;
-  stroke: var(--stone); fill: none; stroke-width: 1.5;
-}
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--linen);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+      transition: color 0.25s ease;
+    }
 
-/* ══════════════════════════════════════════
-   SELECTED WORK
-══════════════════════════════════════════ */
-#work { padding: 120px 64px; background: var(--linen); }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--charcoal);
+      transition: width 0.3s ease;
+    }
 
-.section-label {
-  font-family: var(--sans);
-  font-size: 0.63rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--parchment);
-  margin-bottom: 14px;
-}
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(1.9rem, 3vw, 2.8rem);
-  font-weight: 300;
-  color: var(--charcoal);
-  margin-bottom: 60px;
-}
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.work-card {
-  background: var(--ivory);
-  border-left: 2px solid transparent;
-  transition: border-color 0.3s, transform 0.35s, box-shadow 0.35s;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.work-card:hover {
-  border-color: var(--stone);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0,0,0,0.06);
-}
-.card-image {
-  width: 100%;
-  aspect-ratio: 16/9;
-  background: var(--linen);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.card-image img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-.work-card:hover .card-image img { transform: scale(1.03); }
-.card-image-placeholder {
-  display: flex; flex-direction: column;
-  align-items: center; gap: 8px;
-}
-.card-image-placeholder svg { width: 26px; height: 26px; stroke: var(--stone); fill: none; stroke-width: 1; }
-.card-image-placeholder span { font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); }
-.card-body {
-  padding: 26px 28px 32px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.card-tag {
-  font-family: var(--sans);
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--stone);
-  margin-bottom: 12px;
-}
-.card-title {
-  font-family: var(--serif);
-  font-size: 1.28rem;
-  font-weight: 400;
-  color: var(--charcoal);
-  line-height: 1.25;
-  margin-bottom: 10px;
-}
-.card-desc {
-  font-size: 0.79rem;
-  color: var(--charcoal);
-  line-height: 1.68;
-  flex: 1;
-  opacity: 0.7;
-}
-.card-arrow {
-  margin-top: 20px;
-  font-size: 0.71rem;
-  letter-spacing: 0.1em;
-  color: var(--charcoal);
-  display: flex; align-items: center; gap: 8px;
-}
+    .nav-links a:hover { color: var(--charcoal); }
+    .nav-links a:hover::after { width: 100%; }
 
-/* ══════════════════════════════════════════
-   ABOUT
-══════════════════════════════════════════ */
-#about { padding: 120px 64px; background: var(--ivory); }
+    /* Hamburger button */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      position: fixed;
+      top: 12px;
+      right: clamp(1rem, 4vw, 1.5rem);
+      z-index: 400;
+    }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.25fr;
-  gap: 84px;
-  align-items: start;
-}
-.about-photo {
-  aspect-ratio: 4/5;
-  background: var(--linen);
-  position: relative;
-  overflow: hidden;
-}
-.about-photo img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-/* FIX: placeholder sits behind any real img */
-.photo-placeholder {
-  width: 100%; height: 100%;
-  position: absolute; top: 0; left: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  gap: 14px;
-  z-index: 0;
-}
-.photo-placeholder svg { width: 44px; height: 44px; stroke: var(--stone); fill: none; stroke-width: 1; }
-.photo-placeholder span { font-size: 0.63rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone); }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--charcoal);
+      transition: transform 0.35s ease, opacity 0.25s ease, background 0.25s ease;
+      transform-origin: center;
+    }
 
-.about-content { padding-top: 4px; }
-.section-rule {
-  width: 36px; height: 1px;
-  background: var(--stone);
-  margin: 14px 0 30px;
-}
-/* FIX: removed :last-child italic rule — closing line now lives outside .about-copy */
-.about-copy p {
-  font-size: 0.93rem;
-  color: var(--charcoal);
-  line-height: 1.92;
-  margin-bottom: 20px;
-}
+    .hamburger.open span {
+      background: var(--off-white);
+    }
 
-/* Closing italic line — full width centred below grid */
-.about-closing {
-  margin-top: 72px;
-  text-align: center;
-}
-.about-closing p {
-  font-family: var(--serif);
-  font-size: clamp(1.2rem, 2vw, 1.65rem);
-  font-style: italic;
-  font-weight: 300;
-  color: var(--charcoal);
-  line-height: 1.55;
-  max-width: 680px;
-  margin: 0 auto;
-}
+    .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* ══════════════════════════════════════════
-   SKILLS MARQUEE
-══════════════════════════════════════════ */
-.marquee-section {
-  padding: 34px 0;
-  background: var(--linen);
-  border-top: 1px solid var(--stone);
-  border-bottom: 1px solid var(--stone);
-  overflow: hidden;
-}
-.marquee-track {
-  display: flex;
-  white-space: nowrap;
-  animation: marquee 55s linear infinite;
-  width: max-content;
-}
-.marquee-item {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--parchment);
-  padding: 0 22px;
-  display: flex; align-items: center; gap: 22px;
-}
-.marquee-item::after { content: '·'; color: var(--charcoal); font-size: 1.1rem; }
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 28, 26, 0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 150;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+    }
 
-/* ══════════════════════════════════════════
-   REEL — desktop only
-══════════════════════════════════════════ */
-#reel {
-  background: #000000;
-  padding: 64px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: end;
-  min-height: 560px;
-}
-.reel-content { align-self: start; padding-top: 20px; }
-.reel-headline {
-  font-family: var(--serif);
-  font-size: clamp(2.4rem, 4.2vw, 4rem);
-  font-weight: 300;
-  color: var(--ivory);
-  line-height: 1.16;
-}
-.video-col {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 100%;
-  min-height: 480px;
-}
-.video-container {
-  width: 88%;
-  aspect-ratio: 9/16;
-  max-height: 496px;
-  background: #000;
-  overflow: hidden;
-  position: relative;
-}
-.video-container video {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
 
-/* ══════════════════════════════════════════
-   TESTIMONIALS
-══════════════════════════════════════════ */
-#testimonials { padding: 120px 64px; background: var(--linen); }
-.testimonials-inner {
-  max-width: 740px;
-  margin: 0 auto;
-  text-align: center;
-}
-.testimonials-inner .section-label { margin-bottom: 52px; }
-.testimonial-slider {
-  position: relative;
-  /* FIX: explicit height so absolute children don't collapse the container */
-  min-height: 240px;
-}
-.testimonial-slide {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  opacity: 0;
-  transition: opacity 0.9s ease;
-  pointer-events: none;
-}
-.testimonial-slide.active {
-  opacity: 1;
-  position: relative;
-  pointer-events: auto;
-}
-.quote-mark {
-  font-family: var(--serif);
-  font-size: 4.5rem;
-  line-height: 0.3;
-  color: var(--stone);
-  display: block;
-  margin-bottom: 30px;
-}
-.quote-text {
-  font-family: var(--serif);
-  font-size: clamp(1.15rem, 1.9vw, 1.55rem);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--charcoal);
-  line-height: 1.58;
-  margin-bottom: 30px;
-}
-.quote-attr {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--parchment);
-}
-.quote-dots {
-  display: flex; justify-content: center;
-  gap: 10px; margin-top: 48px;
-}
-.quote-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--stone); cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-  border: none;
-}
-.quote-dot.active { background: var(--charcoal); transform: scale(1.3); }
+    .mobile-menu a {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 300;
+      color: var(--off-white);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.25s ease;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: none;
+    }
 
-/* ══════════════════════════════════════════
-   CONTACT
-══════════════════════════════════════════ */
-#contact { padding: 120px 64px; background: var(--nearblack); }
-.contact-inner { max-width: 620px; }
-.contact-label {
-  font-family: var(--sans); font-size: 0.63rem;
-  letter-spacing: 0.26em; text-transform: uppercase;
-  color: var(--stone); margin-bottom: 20px;
-}
-.contact-headline {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3.2rem);
-  font-weight: 300; color: var(--ivory);
-  margin-bottom: 26px; line-height: 1.14;
-}
-.contact-sub {
-  font-size: 0.87rem; color: var(--stone);
-  line-height: 1.82; margin-bottom: 40px; max-width: 420px;
-}
+    .mobile-menu.open a {
+      animation: menuItemIn 0.4s ease forwards;
+    }
 
-/* Available badge */
-.available-badge {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 32px;
-}
-.available-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #7fbf7f;
-  position: relative;
-  flex-shrink: 0;
-}
-.available-dot::after {
-  content: '';
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #7fbf7f;
-  animation: dotPulse 2s ease-out infinite;
-}
-.available-label {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #ffffff;
-  font-weight: 300;
-}
-.contact-links { display: flex; gap: 32px; flex-wrap: wrap; align-items: center; }
-.contact-link {
-  font-family: var(--sans); font-size: 0.74rem;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: var(--ivory); text-decoration: none;
-  border-bottom: 1px solid var(--stone); padding-bottom: 3px;
-  transition: color 0.3s;
-}
-.contact-link:hover { color: var(--stone); }
+    .mobile-menu.open a:nth-child(1) { animation-delay: 0.05s; }
+    .mobile-menu.open a:nth-child(2) { animation-delay: 0.12s; }
+    .mobile-menu.open a:nth-child(3) { animation-delay: 0.19s; }
 
-/* ══════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════ */
-footer {
-  padding: 26px 64px;
-  background: var(--nearblack);
-  display: flex; align-items: center;
-  justify-content: space-between; flex-wrap: wrap; gap: 10px;
-  border-top: 1px solid #1a1a1a;
-}
-.footer-name { font-family: var(--serif); font-size: 0.92rem; color: var(--stone); font-weight: 300; }
-.footer-copy { font-family: var(--sans); font-size: 0.62rem; letter-spacing: 0.1em; color: #444; }
+    .mobile-menu a:hover { color: var(--taupe); }
 
-/* ══════════════════════════════════════════
-   SCROLL REVEAL
-══════════════════════════════════════════ */
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.75s ease, transform 0.75s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+    @keyframes menuItemIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-/* ══════════════════════════════════════════
-   KEYFRAMES
-══════════════════════════════════════════ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes chevronPulse {
-  0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
-  50%       { opacity: 1;   transform: translateX(-50%) translateY(5px); }
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-@keyframes dotPulse {
-  0%   { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-  70%  { transform: translate(-50%, -50%) scale(2.8); opacity: 0; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
-}
+    /* ─── Hero ───────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding: 68px clamp(1.5rem, 5vw, 4rem) clamp(3rem, 8vh, 5rem);
+      position: relative;
+      background-color: var(--off-white);
+    }
 
-/* ══════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════ */
-@media (max-width: 1024px) {
-  nav { padding: 0 36px; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
+    .hero-content {
+      max-width: 820px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  #hero { padding: 110px 36px 100px; }
-  .hero-name { font-size: clamp(2.6rem, 9vw, 4.2rem); }
-  .hero-roles { font-size: 0.6rem; gap: 12px; }
-  /* FIX: sub-block stays centred on tablet */
-  .hero-sub-block {
-    width: calc(100% - 72px);
-    bottom: 80px;
-  }
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 10vw, 8.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      color: var(--charcoal);
+      margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+    }
 
-  #work { padding: 80px 36px; }
-  .work-grid { grid-template-columns: 1fr; gap: 20px; }
+    .hero-role {
+      font-family: var(--sans);
+      font-size: clamp(0.7rem, 1.8vw, 0.85rem);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--linen);
+      margin-bottom: clamp(2rem, 5vh, 3.5rem);
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+    }
 
-  #about { padding: 80px 36px; }
-  .about-grid { grid-template-columns: 1fr; gap: 48px; }
-  .about-photo { max-width: 320px; }
-  .about-closing { margin-top: 48px; }
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--taupe);
+      margin-bottom: clamp(1.5rem, 3vh, 2rem);
+      opacity: 0;
+      animation: fadeIn 0.8s ease 0.65s forwards;
+    }
 
-  #reel { display: none; }
+    .hero-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--charcoal);
+      margin-bottom: clamp(1rem, 2vh, 1.25rem);
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards;
+    }
 
-  #testimonials { padding: 80px 36px; }
-  #contact { padding: 80px 36px; }
-  footer { padding: 24px 36px; }
-}
+    .hero-body {
+      font-family: var(--sans);
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      font-weight: 300;
+      color: #5A5854;
+      max-width: 480px;
+      line-height: 1.75;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
+    }
 
-@media (max-width: 480px) {
-  .hero-name { letter-spacing: 0.08em; }
-  .hero-roles { flex-direction: column; gap: 6px; align-items: center; }
-  .hero-roles .divider { width: 24px; height: 1px; }
-  /* FIX: prevent absolute sub-block from overflowing on small phones */
-  .hero-sub-block {
-    width: calc(100% - 48px);
-    bottom: 72px;
-  }
-  .hero-sub-body { font-size: 0.9rem; }
-}
+    .hero-chevron {
+      margin-top: clamp(2.5rem, 5vh, 4rem);
+      opacity: 0;
+      animation: fadeIn 1s ease 1.2s forwards;
+    }
 
-/* ══════════════════════════════════════════
-   REDUCED MOTION
-══════════════════════════════════════════ */
-@media (prefers-reduced-motion: reduce) {
-  .hero-name, .hero-roles, .hero-sub, .chevron {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  .marquee-track { animation: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .available-dot::after { animation: none; }
-}
+    .hero-chevron a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--linen);
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      animation: chevronBob 2.5s ease-in-out 2s infinite;
+    }
 
-</style>
+    .hero-chevron a:hover {
+      color: var(--charcoal);
+    }
+
+    .hero-chevron svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .hero-name { word-break: break-word; }
+    }
+
+    /* ─── Selected Work ─────────────────────────────────────────── */
+    .work {
+      padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 5vw, 4rem);
+      background: var(--ivory);
+    }
+
+    .work-header {
+      margin-bottom: clamp(2.5rem, 5vh, 4rem);
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.865rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--linen);
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .work-card {
+      padding: clamp(2rem, 4vw, 2.75rem);
+      border-top: 1px solid var(--taupe);
+      border-right: 1px solid var(--taupe);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: background 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .work-card:nth-child(even) {
+      border-right: none;
+    }
+
+    .work-card:nth-last-child(-n+2) {
+      border-bottom: 1px solid var(--taupe);
+    }
+
+    .work-card:hover {
+      background: rgba(168, 152, 128, 0.06);
+    }
+
+    .work-card:nth-child(1) { transition-delay: 0.05s; }
+    .work-card:nth-child(2) { transition-delay: 0.12s; }
+    .work-card:nth-child(3) { transition-delay: 0.19s; }
+    .work-card:nth-child(4) { transition-delay: 0.26s; }
+    .work-card:nth-child(5) { transition-delay: 0.33s; }
+    .work-card:nth-child(6) { transition-delay: 0.40s; }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      margin: -clamp(2rem, 4vw, 2.75rem) -clamp(2rem, 4vw, 2.75rem) 1.25rem;
+      width: calc(100% + clamp(4rem, 8vw, 5.5rem));
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      filter: saturate(0.85);
+    }
+
+    .work-card:hover .card-image img {
+      transform: scale(1.03);
+    }
+
+    .card-meta {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--linen);
+    }
+
+    .card-title {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 400;
+      color: var(--charcoal);
+      line-height: 1.2;
+    }
+
+    .card-desc {
+      font-family: var(--sans);
+      font-size: clamp(0.85rem, 1.4vw, 0.9rem);
+      font-weight: 300;
+      color: #5A5854;
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .card-link {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--charcoal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+      transition: color 0.25s ease;
+    }
+
+    .card-link:hover { color: var(--linen); }
+
+    .card-arrow {
+      display: inline-block;
+      transition: transform 0.25s ease;
+    }
+
+    .card-link:hover .card-arrow { transform: translateX(4px); }
+
+    @media (max-width: 640px) {
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+      .work-card {
+        border-right: none;
+        border-bottom: 1px solid var(--taupe);
+      }
+      .work-card:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--taupe);
+      }
+      .work-card:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* ─── About ──────────────────────────────────────────────────── */
+    .about {
+      background: var(--step-3);
+      padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about-image-wrap {
+      position: sticky;
+      top: 100px;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .about-image {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.8);
+      transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .about-image:hover img {
+      transform: scale(1.02);
+    }
+
+    .about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+    }
+
+    .about-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .about-body p {
+      font-family: var(--sans);
+      font-size: clamp(0.9rem, 1.6vw, 1rem);
+      font-weight: 300;
+      color: #3A3835;
+      line-height: 1.85;
+    }
+
+    .about-closing {
+      font-family: var(--serif) !important;
+      font-size: clamp(1.1rem, 2vw, 1.3rem) !important;
+      font-style: italic;
+      font-weight: 300 !important;
+      color: var(--charcoal) !important;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--taupe);
+    }
+
+    @media (max-width: 768px) {
+      .about-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image-wrap {
+        position: relative;
+        top: auto;
+        max-width: 320px;
+      }
+    }
+
+    /* ─── Skills Marquee ─────────────────────────────────────────── */
+    .marquee-section {
+      background: var(--ivory);
+      border-top: 1px solid var(--taupe);
+      border-bottom: 1px solid var(--taupe);
+      padding: clamp(1.4rem, 3vh, 2rem) 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+
+    .marquee-inner {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      animation: marqueeScroll 40s linear infinite;
+      padding-right: 1.25rem;
+    }
+
+    .marquee-inner span {
+      font-family: var(--sans);
+      font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      opacity: 0.75;
+    }
+
+    .marquee-dot {
+      color: var(--linen) !important;
+      opacity: 1 !important;
+      font-size: 0.9rem !important;
+      letter-spacing: 0 !important;
+    }
+
+    .marquee-section:hover .marquee-inner {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-100%); }
+    }
+
+    /* ─── Testimonials ───────────────────────────────────────────── */
+    .testimonials {
+      background: var(--charcoal);
+      padding: clamp(5rem, 12vh, 9rem) 0;
+      overflow: hidden;
+    }
+
+    .testimonials-inner {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(2.5rem, 5vh, 4rem);
+    }
+
+    .testimonials-header {
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .section-label--light {
+      color: var(--taupe) !important;
+    }
+
+    /* ── Marquee (desktop + tablet) ── */
+    .testimonials-track {
+      display: flex;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    }
+
+    .testimonials-marquee {
+      display: flex;
+      gap: clamp(2rem, 4vw, 3.5rem);
+      animation: testimonialsScroll 36s linear infinite;
+      flex-shrink: 0;
+    }
+
+    .testimonials-track:hover .testimonials-marquee {
+      animation-play-state: paused;
+    }
+
+    .testimonial-card {
+      flex-shrink: 0;
+      width: clamp(280px, 38vw, 480px);
+      padding: clamp(2rem, 3vw, 2.75rem);
+      border: 1px solid rgba(196, 184, 168, 0.15);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+      background: rgba(255, 255, 255, 0.03);
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    .testimonial-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(196, 184, 168, 0.3);
+    }
+
+    /* ── Grid (mobile only) ── */
+    .testimonials-grid {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .testimonials {
+        padding: clamp(4rem, 10vh, 6rem) clamp(1.5rem, 5vw, 2rem);
+      }
+
+      .testimonials-track {
+        display: none;
+      }
+
+      .testimonials-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .testimonial-card {
+        width: 100%;
+        flex-shrink: unset;
+        border: none;
+        border-top: 1px solid rgba(196, 184, 168, 0.2);
+        padding: 2rem 0;
+        background: transparent;
+      }
+
+      .testimonial-card:first-child {
+        border-top: none;
+        padding-top: 0;
+      }
+
+      .testimonial-card:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    .testimonial-card blockquote {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--off-white);
+      line-height: 1.75;
+      border: none;
+      padding: 0;
+      margin: 0;
+      position: relative;
+    }
+
+    .testimonial-card blockquote::before {
+      content: none;
+    }
+
+    .testimonial-card figcaption {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .testimonial-name {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--taupe);
+    }
+
+    .testimonial-title {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      color: rgba(196, 184, 168, 0.55);
+    }
+
+    @keyframes testimonialsScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── Philosophy ─────────────────────────────────────────────── */
+    .philosophy {
+      background: var(--black);
+      padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .philosophy-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .philosophy-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .philosophy-statement {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--off-white);
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+    }
+
+    .philosophy-body {
+      font-family: var(--sans);
+      font-size: clamp(0.9rem, 1.6vw, 1rem);
+      font-weight: 300;
+      color: rgba(250, 250, 248, 0.55);
+      line-height: 1.85;
+      max-width: 480px;
+    }
+
+    .philosophy-video {
+      display: flex;
+      justify-content: flex-end;
+      transition: opacity 0.9s ease 0.2s, transform 0.9s ease 0.2s;
+    }
+
+    .philosophy-video-wrap {
+      aspect-ratio: 9 / 16;
+      width: 100%;
+      max-width: 340px;
+      overflow: hidden;
+      position: relative;
+      background: #1a1a1a;
+    }
+
+    .philosophy-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .philosophy-video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(196, 184, 168, 0.2);
+    }
+
+    .philosophy-video-placeholder span {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(196, 184, 168, 0.35);
+    }
+
+    /* Hide placeholder once video loads */
+    .philosophy-video-wrap video:not([src="assets/videos/blooming-lily-red.mp4"]) + .philosophy-video-placeholder {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .philosophy-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .philosophy-video {
+        justify-content: center;
+      }
+
+      .philosophy-video-wrap {
+        max-width: 260px;
+      }
+    }
+
+    /* ─── Contact ────────────────────────────────────────────────── */
+    .contact {
+      background: var(--black);
+      padding: clamp(5rem, 12vh, 9rem) clamp(1.5rem, 5vw, 4rem);
+    }
+
+    .contact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 8vw, 8rem);
+      align-items: end;
+    }
+
+    .contact-header {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: opacity 0.9s ease, transform 0.9s ease;
+    }
+
+    .contact-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--off-white);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-body {
+      font-family: var(--sans);
+      font-size: clamp(0.9rem, 1.6vw, 1rem);
+      font-weight: 300;
+      color: rgba(250, 250, 248, 0.45);
+      line-height: 1.8;
+      max-width: 400px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      transition: opacity 0.9s ease 0.2s, transform 0.9s ease 0.2s;
+    }
+
+    .contact-availability {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .availability-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--off-white);
+      box-shadow: 0 0 8px rgba(250, 250, 248, 0.6);
+      animation: pulse 2.5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(250, 250, 248, 0.6); }
+      50%       { opacity: 0.7; box-shadow: 0 0 14px rgba(250, 250, 248, 0.9); }
+    }
+
+    .availability-text {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--off-white);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 300;
+      color: var(--off-white);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(196, 184, 168, 0.15);
+      transition: color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .contact-link:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .contact-link:hover {
+      color: var(--taupe);
+      border-color: rgba(196, 184, 168, 0.35);
+    }
+
+    .contact-link-arrow {
+      font-family: var(--sans);
+      font-size: 1rem;
+      transition: transform 0.25s ease;
+      color: var(--linen);
+    }
+
+    .contact-link:hover .contact-link-arrow {
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────────── */
+    .footer {
+      background: var(--black);
+      border-top: 1px solid rgba(196, 184, 168, 0.1);
+      padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-name {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: rgba(250, 250, 248, 0.35);
+    }
+
+    .footer-copy {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      color: rgba(250, 250, 248, 0.25);
+    }
+
+    @media (max-width: 480px) {
+      .footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+    }
+
+    /* ─── Keyframes ──────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes chevronBob {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(5px); }
+    }
+
+    /* ─── Mobile breakpoint ──────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#" class="nav-logo">roshpar</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <button class="hamburger" id="hamburger" aria-label="Open menu">
-    <span></span><span></span><span></span>
+  <!-- ── Navigation ─────────────────────────────────────────────── -->
+  <nav id="nav">
+    <a href="#" class="nav-wordmark">roshpar</a>
+
+    <ul class="nav-links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hamburger — sits outside nav, always above overlay -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
   </button>
-</nav>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
-  <a href="#about"   onclick="closeMobile()">About</a>
-  <a href="#work"    onclick="closeMobile()">Work</a>
-  <a href="#contact" onclick="closeMobile()">Contact</a>
-</div>
-
-<!-- ══ HERO ══ -->
-<section id="hero">
-  <div class="hero-inner">
-    <h1 class="hero-name">Roshni Parmar</h1>
-    <p class="hero-roles">
-      Creative Operations Lead
-      <span class="divider" aria-hidden="true"></span>
-      Senior Project Manager
-    </p>
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+    <a href="#work"    onclick="closeMenu()">Work</a>
+    <a href="#about"   onclick="closeMenu()">About</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
   </div>
-  <div class="hero-sub-block">
-    <p class="hero-sub">
-      <span class="hero-sub-tagline">Good process is invisible.</span>
-      <span class="hero-sub-body">Bringing order to complexity, I build systems that let creative teams find focus and rhythm to do their best work.</span>
-    </p>
-  </div>
-  <div class="chevron" role="button" tabindex="0" aria-label="Scroll to work"
-    onclick="document.getElementById('work').scrollIntoView({behavior:'smooth'})"
-    onkeydown="if(event.key==='Enter')document.getElementById('work').scrollIntoView({behavior:'smooth'})">
-    <svg viewBox="0 0 24 14" aria-hidden="true"><polyline points="1,1 12,13 23,1"/></svg>
-  </div>
-</section>
 
-<!-- ══ SELECTED WORK ══ -->
-<section id="work">
-  <p class="section-label reveal">Selected Work</p>
-  <h2 class="section-title reveal reveal-delay-1">Projects that moved things forward.</h2>
-  <div class="work-grid">
+  <!-- ── Hero ───────────────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+<div class="hero-content">
+      <h1 class="hero-name">Roshni Parmar</h1>
+      <p class="hero-role">Creative Operations Lead &middot; Senior Project Manager</p>
 
-    <div class="work-card reveal reveal-delay-1">
-      <div class="card-image">
-        <div class="card-image-placeholder">
-          <svg viewBox="0 0 28 22"><rect x="1" y="1" width="26" height="20" rx="1"/><path d="M1 15l7-7 5 5 4-4 10 10"/><circle cx="8" cy="7" r="2"/></svg>
-          <span>Project image</span>
-        </div>
+      <div class="hero-divider" aria-hidden="true"></div>
+
+      <p class="hero-tagline">Good process is invisible.</p>
+      <p class="hero-body">Bringing order to complexity, I build systems that let creative teams find focus and rhythm to do their best work.</p>
+
+      <div class="hero-chevron">
+        <a href="#work" aria-label="Scroll to work">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="2,5 8,11 14,5"/>
+          </svg>
+        </a>
       </div>
-      <div class="card-body">
-        <p class="card-tag">Brand · Integrated Campaign</p>
+    </div>
+  </section>
+
+
+  <!-- ── Selected Work ─────────────────────────────────────────── -->
+  <section class="work" id="work">
+    <div class="work-header">
+      <span class="section-label">Selected Work</span>
+    </div>
+
+    <div class="work-grid">
+
+      <article class="work-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=80" alt="National Campaign Rebrand" />
+        </div>
+        <div class="card-meta">Brand · Integrated Campaign</div>
         <h3 class="card-title">National Campaign Rebrand</h3>
         <p class="card-desc">End-to-end campaign management across digital, OOH, and broadcast for a national consumer brand. Delivered on time, under budget.</p>
-        <span class="card-arrow">View project →</span>
-      </div>
-    </div>
+        <a href="#" class="card-link">View project <span class="card-arrow">→</span></a>
+      </article>
 
-    <div class="work-card reveal reveal-delay-2">
-      <div class="card-image">
-        <div class="card-image-placeholder">
-          <svg viewBox="0 0 28 22"><rect x="1" y="1" width="26" height="20" rx="1"/><path d="M1 15l7-7 5 5 4-4 10 10"/><circle cx="8" cy="7" r="2"/></svg>
-          <span>Project image</span>
+      <article class="work-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80" alt="Always-On Content Programme" />
         </div>
-      </div>
-      <div class="card-body">
-        <p class="card-tag">Production · Digital</p>
+        <div class="card-meta">Production · Digital</div>
         <h3 class="card-title">Always-On Content Programme</h3>
         <p class="card-desc">Built the production infrastructure for a 52-week always-on social content programme across four markets.</p>
-        <span class="card-arrow">View project →</span>
-      </div>
-    </div>
+        <a href="#" class="card-link">View project <span class="card-arrow">→</span></a>
+      </article>
 
-    <div class="work-card reveal reveal-delay-3">
-      <div class="card-image">
-        <div class="card-image-placeholder">
-          <svg viewBox="0 0 28 22"><rect x="1" y="1" width="26" height="20" rx="1"/><path d="M1 15l7-7 5 5 4-4 10 10"/><circle cx="8" cy="7" r="2"/></svg>
-          <span>Project image</span>
+      <article class="work-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Agency Agile Transformation" />
         </div>
-      </div>
-      <div class="card-body">
-        <p class="card-tag">Agile · Creative Operations</p>
+        <div class="card-meta">Agile · Creative Operations</div>
         <h3 class="card-title">Agency Agile Transformation</h3>
         <p class="card-desc">Led the scrum transformation of a 40-person creative department, reducing delivery friction and improving on-time rates by 30%.</p>
-        <span class="card-arrow">View project →</span>
-      </div>
-    </div>
+        <a href="#" class="card-link">View project <span class="card-arrow">→</span></a>
+      </article>
 
-    <div class="work-card reveal reveal-delay-1">
-      <div class="card-image">
-        <div class="card-image-placeholder">
-          <svg viewBox="0 0 28 22"><rect x="1" y="1" width="26" height="20" rx="1"/><path d="M1 15l7-7 5 5 4-4 10 10"/><circle cx="8" cy="7" r="2"/></svg>
-          <span>Project image</span>
+      <article class="work-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Live Event & Brand Experience" />
         </div>
-      </div>
-      <div class="card-body">
-        <p class="card-tag">Experiential · Brand</p>
-        <h3 class="card-title">Live Event &amp; Brand Experience</h3>
+        <div class="card-meta">Experiential · Brand</div>
+        <h3 class="card-title">Live Event & Brand Experience</h3>
         <p class="card-desc">Managed a flagship experiential activation across three cities, coordinating multi-disciplinary teams under live-event pressures.</p>
-        <span class="card-arrow">View project →</span>
-      </div>
-    </div>
+        <a href="#" class="card-link">View project <span class="card-arrow">→</span></a>
+      </article>
 
-    <div class="work-card reveal reveal-delay-2">
-      <div class="card-image">
-        <div class="card-image-placeholder">
-          <svg viewBox="0 0 28 22"><rect x="1" y="1" width="26" height="20" rx="1"/><path d="M1 15l7-7 5 5 4-4 10 10"/><circle cx="8" cy="7" r="2"/></svg>
-          <span>Project image</span>
+      <article class="work-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Brand Portfolio Alignment" />
         </div>
-      </div>
-      <div class="card-body">
-        <p class="card-tag">Client-Side · Strategic</p>
+        <div class="card-meta">Client-Side · Strategic</div>
         <h3 class="card-title">Brand Portfolio Alignment</h3>
         <p class="card-desc">Client-side leadership across a brand portfolio review, managing agency relationships and internal stakeholders over an 8-month process.</p>
-        <span class="card-arrow">View project →</span>
-      </div>
-    </div>
+        <a href="#" class="card-link">View project <span class="card-arrow">→</span></a>
+      </article>
 
-    <div class="work-card reveal reveal-delay-3">
-      <div class="card-image">
-        <div class="card-image-placeholder">
-          <svg viewBox="0 0 28 22"><rect x="1" y="1" width="26" height="20" rx="1"/><path d="M1 15l7-7 5 5 4-4 10 10"/><circle cx="8" cy="7" r="2"/></svg>
-          <span>Project image</span>
+      <article class="work-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Integrated Launch Campaign" />
         </div>
-      </div>
-      <div class="card-body">
-        <p class="card-tag">Print · OOH · Broadcast</p>
+        <div class="card-meta">Print · OOH · Broadcast</div>
         <h3 class="card-title">Integrated Launch Campaign</h3>
         <p class="card-desc">Delivered a full-funnel product launch across print, OOH, and broadcast within a compressed 6-week timeline.</p>
-        <span class="card-arrow">View project →</span>
+        <a href="#" class="card-link">View project <span class="card-arrow">→</span></a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ── Skills Marquee ───────────────────────────────────────── -->
+  <section class="marquee-section">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span>Client Success</span><span class="marquee-dot">·</span>
+        <span>Stakeholder Management</span><span class="marquee-dot">·</span>
+        <span>Project Management</span><span class="marquee-dot">·</span>
+        <span>Agile Transformation</span><span class="marquee-dot">·</span>
+        <span>Certified ScrumMaster</span><span class="marquee-dot">·</span>
+        <span>Creative Operations</span><span class="marquee-dot">·</span>
+        <span>Account Management</span><span class="marquee-dot">·</span>
+        <span>Strategic Leadership</span><span class="marquee-dot">·</span>
+        <span>Resource Planning</span><span class="marquee-dot">·</span>
+        <span>Production</span><span class="marquee-dot">·</span>
+        <span>Risk Mitigation</span><span class="marquee-dot">·</span>
+        <span>Cross-functional Collaboration</span><span class="marquee-dot">·</span>
+        <span>Workflow Design</span><span class="marquee-dot">·</span>
+        <span>Budget Management</span><span class="marquee-dot">·</span>
+        <span>Agency Operations</span><span class="marquee-dot">·</span>
+        <span>Delivery Excellence</span><span class="marquee-dot">·</span>
+        <span>Conflict Resolution</span><span class="marquee-dot">·</span>
+        <span>Executive Communication</span><span class="marquee-dot">·</span>
+        <span>Change Management</span><span class="marquee-dot">·</span>
+        <span>Team Development</span><span class="marquee-dot">·</span>
+        <span>Capacity Planning</span><span class="marquee-dot">·</span>
+        <span>Constructive Accountability</span><span class="marquee-dot">·</span>
+        <span>Clarity Under Pressure</span><span class="marquee-dot">·</span>
+        <span>Mentorship</span><span class="marquee-dot">·</span>
+      </div>
+      <div class="marquee-inner" aria-hidden="true">
+        <span>Client Success</span><span class="marquee-dot">·</span>
+        <span>Stakeholder Management</span><span class="marquee-dot">·</span>
+        <span>Project Management</span><span class="marquee-dot">·</span>
+        <span>Agile Transformation</span><span class="marquee-dot">·</span>
+        <span>Certified ScrumMaster</span><span class="marquee-dot">·</span>
+        <span>Creative Operations</span><span class="marquee-dot">·</span>
+        <span>Account Management</span><span class="marquee-dot">·</span>
+        <span>Strategic Leadership</span><span class="marquee-dot">·</span>
+        <span>Resource Planning</span><span class="marquee-dot">·</span>
+        <span>Production</span><span class="marquee-dot">·</span>
+        <span>Risk Mitigation</span><span class="marquee-dot">·</span>
+        <span>Cross-functional Collaboration</span><span class="marquee-dot">·</span>
+        <span>Workflow Design</span><span class="marquee-dot">·</span>
+        <span>Budget Management</span><span class="marquee-dot">·</span>
+        <span>Agency Operations</span><span class="marquee-dot">·</span>
+        <span>Delivery Excellence</span><span class="marquee-dot">·</span>
+        <span>Conflict Resolution</span><span class="marquee-dot">·</span>
+        <span>Executive Communication</span><span class="marquee-dot">·</span>
+        <span>Change Management</span><span class="marquee-dot">·</span>
+        <span>Team Development</span><span class="marquee-dot">·</span>
+        <span>Capacity Planning</span><span class="marquee-dot">·</span>
+        <span>Constructive Accountability</span><span class="marquee-dot">·</span>
+        <span>Clarity Under Pressure</span><span class="marquee-dot">·</span>
+        <span>Mentorship</span><span class="marquee-dot">·</span>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ── About ─────────────────────────────────────────────────── -->
+  <section class="about" id="about">
+    <div class="about-inner">
 
-<!-- ══ ABOUT ══ -->
-<section id="about">
-  <div class="about-grid">
-    <div class="reveal">
-      <div class="about-photo">
-        <div class="photo-placeholder">
-          <svg viewBox="0 0 40 40"><circle cx="20" cy="14" r="7"/><path d="M6 36c0-8 6-14 14-14s14 6 14 14"/></svg>
-          <span>Your photo here</span>
+      <div class="about-image-wrap">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80" alt="Roshni Parmar" />
         </div>
       </div>
-    </div>
-    <div class="about-content">
-      <p class="section-label reveal">About</p>
-      <div class="section-rule reveal reveal-delay-1"></div>
-      <div class="about-copy">
-        <p class="reveal reveal-delay-2">I bring clarity, structure, and steadiness to fast-moving environments so that creative and marketing teams feel supported to take ambitious leaps with confidence.</p>
-        <p class="reveal reveal-delay-3">My background spans eight years across account leadership, project management, production, and creative operations. My career has taken me across the globe, from multinational agencies to independent creative shops, working agency-side to support creative teams, and client-side to champion brands.</p>
-        <p class="reveal reveal-delay-4">I've led multi-channel and integrated campaigns across digital, social, broadcast, experiential, print, and OOH. From scrappy, just-make-it-happen shoots to big-budget national productions, the kind that win clicks and hearts. I love leading people and process. Not despite the complexity, but because of it.</p>
-      </div>
-    </div>
-  </div>
-  <div class="about-closing reveal">
-    <p>The best process leaves room for the unexpected. My job is to hold the structure so the team can hold the vision.</p>
-  </div>
-</section>
 
-<!-- ══ SKILLS MARQUEE ══ -->
-<div class="marquee-section" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item">Client Success</span><span class="marquee-item">Stakeholder Management</span><span class="marquee-item">Project Management</span><span class="marquee-item">Agile Transformation</span><span class="marquee-item">Certified ScrumMaster</span><span class="marquee-item">Creative Operations</span><span class="marquee-item">Account Management</span><span class="marquee-item">Strategic Leadership</span><span class="marquee-item">Resource Planning</span><span class="marquee-item">Production</span><span class="marquee-item">Risk Mitigation</span><span class="marquee-item">Cross-functional Collaboration</span><span class="marquee-item">Workflow Design</span><span class="marquee-item">Budget Management</span><span class="marquee-item">Agency Operations</span><span class="marquee-item">Delivery Excellence</span><span class="marquee-item">Conflict Resolution</span><span class="marquee-item">Executive Communication</span><span class="marquee-item">Change Management</span><span class="marquee-item">Team Development</span><span class="marquee-item">Capacity Planning</span><span class="marquee-item">Constructive Accountability</span><span class="marquee-item">Clarity Under Pressure</span><span class="marquee-item">Mentorship</span><span class="marquee-item">Client Success</span><span class="marquee-item">Stakeholder Management</span><span class="marquee-item">Project Management</span><span class="marquee-item">Agile Transformation</span><span class="marquee-item">Certified ScrumMaster</span><span class="marquee-item">Creative Operations</span><span class="marquee-item">Account Management</span><span class="marquee-item">Strategic Leadership</span><span class="marquee-item">Resource Planning</span><span class="marquee-item">Production</span><span class="marquee-item">Risk Mitigation</span><span class="marquee-item">Cross-functional Collaboration</span><span class="marquee-item">Workflow Design</span><span class="marquee-item">Budget Management</span><span class="marquee-item">Agency Operations</span><span class="marquee-item">Delivery Excellence</span><span class="marquee-item">Conflict Resolution</span><span class="marquee-item">Executive Communication</span><span class="marquee-item">Change Management</span><span class="marquee-item">Team Development</span><span class="marquee-item">Capacity Planning</span><span class="marquee-item">Constructive Accountability</span><span class="marquee-item">Clarity Under Pressure</span><span class="marquee-item">Mentorship</span>
-  </div>
-</div>
-
-<!-- ══ REEL — desktop only ══ -->
-<section id="reel" aria-hidden="true">
-  <div class="reel-content">
-    <h2 class="reel-headline reveal">Seeing people bloom makes me passionate about leading creative teams.</h2>
-  </div>
-  <div class="video-col">
-    <div class="video-container">
-      <video autoplay muted loop playsinline preload="none">
-        <source src="assets/videos/blooming-lily-red.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TESTIMONIALS ══ -->
-<section id="testimonials">
-  <div class="testimonials-inner">
-    <p class="section-label reveal">What people say</p>
-    <div class="testimonial-slider reveal reveal-delay-2" id="testimonialSlider">
-
-      <div class="testimonial-slide active">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <p class="quote-text">She has an exceptional ability to bring calm and clarity to complex projects. The kind of person who makes everyone around her better at their job.</p>
-        <p class="quote-attr">First Name Last Name · Title · Company</p>
-      </div>
-
-      <div class="testimonial-slide">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <p class="quote-text">Roshni doesn't just manage projects — she shapes the way a team thinks and works together. Her presence raises the standard without raising the pressure.</p>
-        <p class="quote-attr">First Name Last Name · Title · Company</p>
-      </div>
-
-      <div class="testimonial-slide">
-        <span class="quote-mark" aria-hidden="true">"</span>
-        <p class="quote-text">Working with Roshni gave our team something rare: the freedom to be ambitious, because we knew someone trustworthy was holding the frame.</p>
-        <p class="quote-attr">First Name Last Name · Title · Company</p>
+      <div class="about-text">
+        <span class="section-label">About</span>
+        <div class="about-body">
+          <p>I bring clarity, structure, and steadiness to fast-moving environments so that creative and marketing teams feel supported to take ambitious leaps with confidence.</p>
+          <p>My background spans eight years across account leadership, project management, production, and creative operations. My career has taken me across the globe, from multinational agencies to independent creative shops, working agency-side to support creative teams, and client-side to champion brands.</p>
+          <p>I've led multi-channel and integrated campaigns across digital, social, broadcast, experiential, print, and OOH. From scrappy, just-make-it-happen shoots to big-budget national productions, the kind that win clicks and hearts. I love leading people and process. Not despite the complexity, but because of it.</p>
+          <p class="about-closing">The best process leaves room for the unexpected. My job is to hold the structure so the team can hold the vision.</p>
+        </div>
       </div>
 
     </div>
-    <div class="quote-dots" role="tablist" aria-label="Testimonials">
-      <button class="quote-dot active" onclick="goToSlide(0)" aria-label="Testimonial 1"></button>
-      <button class="quote-dot"        onclick="goToSlide(1)" aria-label="Testimonial 2"></button>
-      <button class="quote-dot"        onclick="goToSlide(2)" aria-label="Testimonial 3"></button>
+  </section>
+
+  <!-- ── Testimonials ──────────────────────────────────────────── -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+
+      <div class="testimonials-header">
+        <span class="section-label section-label--light">What people say</span>
+      </div>
+
+      <div class="testimonials-track">
+        <!-- First set -->
+        <div class="testimonials-marquee">
+
+          <figure class="testimonial-card">
+            <blockquote>"She has an exceptional ability to bring calm and clarity to complex projects. The kind of person who makes everyone around her better at their job."</blockquote>
+            <figcaption>
+              <span class="testimonial-name">First Name Last Name</span>
+              <span class="testimonial-title">Title · Company</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card">
+            <blockquote>"Roshni doesn't just manage projects — she shapes the way a team thinks and works together. Her presence raises the standard without raising the pressure."</blockquote>
+            <figcaption>
+              <span class="testimonial-name">First Name Last Name</span>
+              <span class="testimonial-title">Title · Company</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card">
+            <blockquote>"Working with Roshni gave our team something rare: the freedom to be ambitious, because we knew someone trustworthy was holding the frame."</blockquote>
+            <figcaption>
+              <span class="testimonial-name">First Name Last Name</span>
+              <span class="testimonial-title">Title · Company</span>
+            </figcaption>
+          </figure>
+
+          <!-- Duplicates for seamless loop -->
+          <figure class="testimonial-card" aria-hidden="true">
+            <blockquote>"She has an exceptional ability to bring calm and clarity to complex projects. The kind of person who makes everyone around her better at their job."</blockquote>
+            <figcaption>
+              <span class="testimonial-name">First Name Last Name</span>
+              <span class="testimonial-title">Title · Company</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card" aria-hidden="true">
+            <blockquote>"Roshni doesn't just manage projects — she shapes the way a team thinks and works together. Her presence raises the standard without raising the pressure."</blockquote>
+            <figcaption>
+              <span class="testimonial-name">First Name Last Name</span>
+              <span class="testimonial-title">Title · Company</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial-card" aria-hidden="true">
+            <blockquote>"Working with Roshni gave our team something rare: the freedom to be ambitious, because we knew someone trustworthy was holding the frame."</blockquote>
+            <figcaption>
+              <span class="testimonial-name">First Name Last Name</span>
+              <span class="testimonial-title">Title · Company</span>
+            </figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+      <!-- Mobile grid (visible on small screens only) -->
+      <div class="testimonials-grid">
+
+        <figure class="testimonial-card">
+          <blockquote>"She has an exceptional ability to bring calm and clarity to complex projects. The kind of person who makes everyone around her better at their job."</blockquote>
+          <figcaption>
+            <span class="testimonial-name">First Name Last Name</span>
+            <span class="testimonial-title">Title · Company</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-card">
+          <blockquote>"Roshni doesn't just manage projects — she shapes the way a team thinks and works together. Her presence raises the standard without raising the pressure."</blockquote>
+          <figcaption>
+            <span class="testimonial-name">First Name Last Name</span>
+            <span class="testimonial-title">Title · Company</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial-card">
+          <blockquote>"Working with Roshni gave our team something rare: the freedom to be ambitious, because we knew someone trustworthy was holding the frame."</blockquote>
+          <figcaption>
+            <span class="testimonial-name">First Name Last Name</span>
+            <span class="testimonial-title">Title · Company</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ CONTACT ══ -->
-<section id="contact">
-  <div class="contact-inner">
-    <p class="contact-label reveal">Get in touch</p>
-    <h2 class="contact-headline reveal reveal-delay-1">Let's build something worth making.</h2>
-    <p class="contact-sub reveal reveal-delay-2">If you're looking for a strategic partner who leads with care and delivers with precision, I'd love to hear from you.</p>
-    <div class="available-badge reveal reveal-delay-3">
-      <span class="available-dot"></span>
-      <span class="available-label">Available for work</span>
+  <!-- ── Philosophy ────────────────────────────────────────────── -->
+  <section class="philosophy" id="philosophy">
+    <div class="philosophy-inner">
+
+      <div class="philosophy-text">
+        <span class="section-label section-label--light">Philosophy</span>
+        <h2 class="philosophy-statement">Seeing people bloom makes me passionate about leading creative teams.</h2>
+        <p class="philosophy-body">I know what it feels like when the brief isn't clear, the timeline isn't realistic, and the handoffs break down at exactly the wrong moment. I also know what it feels like when things are running well: when a team has the space to think, the clarity to act, and the confidence that someone is holding the bigger picture.</p>
+      </div>
+
+      <div class="philosophy-video">
+        <div class="philosophy-video-wrap">
+          <video autoplay muted loop playsinline>
+            <source src="" type="video/mp4" />
+          </video>
+          <div class="philosophy-video-placeholder" aria-hidden="true">
+            <span>Your video here</span>
+          </div>
+        </div>
+      </div>
+
     </div>
-    <div class="contact-links reveal reveal-delay-4">
-      <a href="mailto:roshni@roshpar.com" class="contact-link">roshni@roshpar.com</a>
-      <a href="https://linkedin.com/in/roshniparmar" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
+  </section>
+
+  <!-- ── Contact ───────────────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+
+      <div class="contact-header">
+        <span class="section-label">Get in touch</span>
+        <h2 class="contact-headline">Let's build something worth making.</h2>
+        <p class="contact-body">If you're looking for a strategic partner who leads with care and delivers with precision, I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-availability">
+          <span class="availability-dot"></span>
+          <span class="availability-text">Available for work</span>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:roshni@roshpar.com" class="contact-link">
+            roshni@roshpar.com
+            <span class="contact-link-arrow">→</span>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link">
+            LinkedIn
+            <span class="contact-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ══ FOOTER ══ -->
-<footer>
-  <span class="footer-name">ROSHPAR CONSULTING</span>
-  <span class="footer-copy">© 2025 roshpar · All rights reserved</span>
-</footer>
+  <!-- ── Footer ─────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <span class="footer-name">Site by Roshni Parmar</span>
+    <span class="footer-copy">© 2025 ROSHPAR CONSULTING · All rights reserved</span>
+  </footer>
 
-<script>
-  /* ── Hamburger ── */
-  const hamburger  = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
+  <script>
 
-  hamburger.addEventListener('click', () => {
-    const open = mobileMenu.classList.toggle('open');
-    hamburger.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
+    // Hamburger toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-  function closeMobile() {
-    mobileMenu.classList.remove('open');
-    hamburger.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+    function openMenu() {
+      hamburger.classList.add('open');
+      mobileMenu.classList.add('open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobile();
-  });
+    function closeMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
 
-  /* ── Scroll reveal ── */
-  const revealEls = document.querySelectorAll('.reveal');
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObs.unobserve(entry.target);
-      }
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.contains('open') ? closeMenu() : openMenu();
     });
-  }, { threshold: 0.1 });
-  revealEls.forEach(el => revealObs.observe(el));
 
-  /* ── Testimonial auto-slider ── */
-  const slides   = document.querySelectorAll('.testimonial-slide');
-  const dots     = document.querySelectorAll('.quote-dot');
-  let current    = 0;
-  let autoTimer  = setInterval(nextSlide, 5000);
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenu();
+    });
+    // Scroll reveal — progressive enhancement with reduced motion support
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function goToSlide(n) {
-    slides[current].classList.remove('active');
-    dots[current].classList.remove('active');
-    current = n;
-    slides[current].classList
+    const revealEls = document.querySelectorAll('.work-card, .about-image-wrap, .about-text, .philosophy-text, .philosophy-video, .contact-header, .contact-details');
+
+    if (!prefersReducedMotion) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            requestAnimationFrame(() => {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            });
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        revealObserver.observe(el);
+      });
+    }
+  </script>
+</body>
+</html>
