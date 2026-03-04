@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Roshni Parmar — Creative Operations Lead and Senior Project Manager. Vancouver, British Columbia, Canada." />
-  <meta property="og:title" content="Roshni Parmar — Senior Project Manager, Creative Operations Lead" />
+  <meta name="description" content="Roshni Parmar — Creative Operations Lead and Senior Project Manager. Building systems that let creative teams find focus and do their best work." />
+  <meta property="og:title" content="Roshni Parmar — Creative Operations Lead" />
   <meta property="og:description" content="Building systems that let creative teams find focus and do their best work." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#F5F2EE" />
-  <title>Roshni Parmar</title>
+  <title>Roshni Parmar — Creative Operations Lead</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -140,6 +140,7 @@
       font-family: var(--serif);
       font-weight: 500;
       font-size: 1.25rem;
+      letter-spacing: 0;
       color: var(--charcoal);
       text-decoration: none;
       text-transform: lowercase;
@@ -217,25 +218,26 @@
 
     /* Mobile menu overlay */
     .mobile-menu {
-      display: none;
       position: fixed;
       inset: 0;
       background: rgba(28, 28, 26, 0.97);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       z-index: 150;
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 2.5rem;
       opacity: 0;
-      transition: opacity 0.35s ease;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s ease;
       pointer-events: none;
     }
 
     .mobile-menu.open {
-      display: flex;
       opacity: 1;
+      visibility: visible;
       pointer-events: all;
     }
 
@@ -1380,8 +1382,8 @@
         </div>
 
         <div class="contact-links">
-          <a href="mailto:roshni@roshpar.com" class="contact-link">
-            roshni@roshpar.com
+          <a href="mailto:roshni&#64;roshpar&#46;com" class="contact-link">
+            roshni&#64;roshpar&#46;com
             <span class="contact-link-arrow">→</span>
           </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener" class="contact-link">
@@ -1410,14 +1412,12 @@
       hamburger.classList.add('open');
       mobileMenu.classList.add('open');
       hamburger.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
     }
 
     hamburger.addEventListener('click', () => {
@@ -1446,4 +1446,13 @@
         });
       }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-      revealEls.forEach
+      revealEls.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(16px)';
+        el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+        revealObserver.observe(el);
+      });
+    }
+  </script>
+</body>
+</html>
