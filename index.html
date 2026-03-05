@@ -1358,8 +1358,8 @@
 
       <div class="philosophy-video">
         <div class="philosophy-video-wrap">
-          <video autoplay muted loop playsinline src="/assets/videos/blooming-lily-red.mp4">
-          </video>
+        <video autoplay muted loop playsinline preload="auto" src="assets/videos/blooming-lily-red.mp4">
+        </video>
         </div>
       </div>
 
@@ -1401,6 +1401,19 @@
   </footer>
 
   <script>
+
+    // Force video autoplay
+const philosophyVideo = document.querySelector('.philosophy-video-wrap video');
+if (philosophyVideo) {
+  philosophyVideo.muted = true;
+  const playPromise = philosophyVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      document.addEventListener('click', () => philosophyVideo.play(), { once: true });
+      document.addEventListener('touchstart', () => philosophyVideo.play(), { once: true });
+    });
+  }
+}
 
     // Hamburger toggle
     const hamburger = document.getElementById('hamburger');
